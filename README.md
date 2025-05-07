@@ -46,6 +46,49 @@ The Course Teaching table maintains records of which instructor is assigned to t
 
 The schema includes sample data insertion statements for each table to facilitate testing and validation of data relationships. These records cover department creation, student registration, course setup, instructor assignments, fee payment tracking, performance monitoring, and course enrollments.
 
+
+Key Relationships:
+Department has:
+
+One-to-many with Student (a department can have many students)
+
+One-to-many with Course (a department offers many courses)
+
+One-to-many with Instructor (a department has many instructors)
+
+Student has:
+
+Many-to-many with Course through CourseEnrollment
+
+One-to-many with Fees (a student can have multiple fee records)
+
+One-to-many with Performance (a student has multiple performance records)
+
+Instructor has:
+
+Many-to-many with Course through CourseTeaching
+
+One-to-many with Performance (an instructor grades many performances)
+
+Semester is central to:
+
+Fees (fees are associated with semesters)
+
+Performance (performance is recorded per semester)
+
+CourseTeaching (teaching assignments are per semester)
+
+Student (students have a current semester)
+
+Course has:
+
+Many-to-many with Student through CourseEnrollment
+
+Many-to-many with Instructor through CourseTeaching
+
+One-to-many with Performance (each course has many performance records)
+
+
 ## Usage and Implementation
 
 * Execute the schema creation queries sequentially to ensure that all necessary tables and relationships are established correctly.
