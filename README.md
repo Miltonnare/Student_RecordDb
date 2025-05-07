@@ -1,4 +1,4 @@
-# University Database Schema
+# Student Record Database Schema
 
 ## Overview
 
